@@ -10,3 +10,4 @@ services:
       - 25566:25577
     volumes:
       - ./logs:/opt/waterfall/server/logs
+      - ./plugins:/opt/waterfall/server/plugins

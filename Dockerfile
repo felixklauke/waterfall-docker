@@ -42,6 +42,7 @@ USER waterfall
 ###############
 ### Volumes ###
 ###############
+VOLUME "${WATERFALL_PATH}/server/logs"
 
 #############################
 ### Expose minecraft port ###

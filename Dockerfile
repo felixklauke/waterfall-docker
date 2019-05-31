@@ -13,6 +13,8 @@ LABEL maintainer="Felix Klauke <info@felix-klauke.de>"
 ### Arguments ###
 #################
 ENV WATERFALL_PATH=/opt/waterfall
+ENV WATERFALL_CI_BUILD=lastSuccessfulBuild
+ENV WATERFALL_CI_URL=https://papermc.io/ci/job/Waterfall/${WATERFALL_CI_BUILD}/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar
 
 ##########################
 ### Download waterfall ###

@@ -28,5 +28,5 @@ matrix:
   include:
     - name: "Waterfall"
       env:
-        - WATERFALL_CI_BUILDNUMBER=lastSuccessfulBuild
+        - WATERFALL_CI_BUILD=lastSuccessfulBuild
         - WATERFALL_VERSION_TAG=latest

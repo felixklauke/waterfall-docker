@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-java -jar waterfall.jar
+java -jar -DIReallyKnowWhatIAmDoingISwear waterfall.jar

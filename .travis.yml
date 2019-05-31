@@ -1,0 +1,32 @@
+################
+### Language ###
+################
+language: bash
+
+services:
+  - docker
+
+#####################
+### Notifications ###
+#####################
+notifications:
+  email: false
+
+##################
+### Deployment ###
+##################
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: master
+
+######################
+### Version Matrix ###
+######################
+matrix:
+  include:
+    - name: "Waterfall"
+      env:
+        - WATERFALL_CI_BUILDNUMBER=lastSuccessfulBuild
+        - WATERFALL_VERSION_TAG=latest

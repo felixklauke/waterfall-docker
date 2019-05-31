@@ -35,7 +35,7 @@ ADD start.sh .
 ### User ###
 ############
 RUN useradd -ms /bin/bash waterfall && \
-    chown waterfall $MINECRAFT_PATH -R
+    chown waterfall $WATERFALL_PATH -R
 
 USER waterfall
 

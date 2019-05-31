@@ -42,7 +42,6 @@ USER waterfall
 ###############
 ### Volumes ###
 ###############
-VOLUME "${DATA_PATH}"
 
 #############################
 ### Expose minecraft port ###

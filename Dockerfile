@@ -16,15 +16,18 @@ ENV WATERFALL_PATH=/opt/waterfall
 ENV WATERFALL_CI_BUILD=lastSuccessfulBuild
 ENV WATERFALL_CI_URL=https://papermc.io/ci/job/Waterfall/${WATERFALL_CI_BUILD}/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar
 
+ENV SERVER_PATH=${WATERFALL_PATH}/server
+ENV CONFIG_PATH=${WATERFALL_PATH}/config
+
 ##########################
 ### Download waterfall ###
 ##########################
-ADD ${WATERFALL_CI_URL} $WATERFALL_PATH/server/waterfall.jar
+ADD ${WATERFALL_CI_URL} ${SERVER_PATH}/waterfall.jar
 
 #########################
 ### Working directory ###
 #########################
-WORKDIR $WATERFALL_PATH/server
+WORKDIR ${SERVER_PATH}
 
 ########################
 ### Obtain starth.sh ###
@@ -42,8 +45,9 @@ USER waterfall
 ###############
 ### Volumes ###
 ###############
-VOLUME "${WATERFALL_PATH}/server/logs"
-VOLUME "${WATERFALL_PATH}/server/plugins"
+VOLUME "${SERVER_PATH}/logs"
+VOLUME "${SERVER_PATH}/plugins"
+VOLUME "${CONFIG_PATH}"
 
 #############################
 ### Expose minecraft port ###

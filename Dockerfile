@@ -19,6 +19,8 @@ ENV WATERFALL_CI_URL=https://papermc.io/ci/job/Waterfall/${WATERFALL_CI_BUILD}/a
 ENV SERVER_PATH=${WATERFALL_PATH}/server
 ENV CONFIG_PATH=${WATERFALL_PATH}/config
 
+ENV JAVA_ARGS="-DIReallyKnowWhatIAmDoingISwear"
+
 ##########################
 ### Download waterfall ###
 ##########################

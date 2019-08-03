@@ -74,3 +74,5 @@ EXPOSE 25565
 ### Entrypoint is the start script ###
 ######################################
 ENTRYPOINT [ "./docker-entrypoint.sh" ]
+
+CMD [ "serve" ]

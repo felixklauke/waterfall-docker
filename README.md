@@ -20,7 +20,7 @@ services:
       - 25565:25565
     volumes:
       - waterfall-logs:/opt/waterfall/server/logs
-      - waterfall-logs:/opt/waterfall/server/plugins
+      - waterfall-plugins:/opt/waterfall/server/plugins
 
 volumes:
   waterfall-logs: {}

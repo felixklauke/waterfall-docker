@@ -12,9 +12,13 @@ LABEL maintainer="Felix Klauke <info@felix-klauke.de>"
 #################
 ### Arguments ###
 #################
+ARG WATERFALL_VERSION=1.14
+ARG WATERFALL_DOWNLOAD_URL=https://papermc.io/api/v1/waterfall/${WATERFALL_VERSION}/latest/download
+
+###################
+### Environment ###
+###################
 ENV WATERFALL_PATH=/opt/waterfall
-ENV WATERFALL_CI_BUILD=lastSuccessfulBuild
-ENV WATERFALL_CI_URL=https://papermc.io/ci/job/Waterfall/${WATERFALL_CI_BUILD}/artifact/Waterfall-Proxy/bootstrap/target/Waterfall.jar
 
 ENV SERVER_PATH=${WATERFALL_PATH}/server
 ENV CONFIG_PATH=${WATERFALL_PATH}/config
@@ -24,7 +28,7 @@ ENV JAVA_ARGS="-DIReallyKnowWhatIAmDoingISwear"
 ##########################
 ### Download waterfall ###
 ##########################
-ADD ${WATERFALL_CI_URL} ${SERVER_PATH}/waterfall.jar
+ADD ${WATERFALL_DOWNLOAD_URL} ${SERVER_PATH}/waterfall.jar
 
 #########################
 ### Working directory ###

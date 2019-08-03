@@ -29,7 +29,15 @@ deploy:
 ######################
 matrix:
   include:
-    - name: "Waterfall"
+    - name: "Waterfall 1.14"
       env:
-        - WATERFALL_CI_BUILD=lastSuccessfulBuild
-        - WATERFALL_VERSION_TAG=latest
+        - WATERFALL_VERSION=1.14
+    - name: "Waterfall 1.13"
+      env:
+        - WATERFALL_VERSION=1.13
+    - name: "Waterfall 1.12"
+      env:
+        - WATERFALL_VERSION=1.12
+    - name: "Waterfall 1.11"
+      env:
+        - WATERFALL_VERSION=1.11

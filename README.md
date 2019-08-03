@@ -1,6 +1,8 @@
 # waterfall-docker
 Docker image for the popular bungee cord fork called Waterfall that aims to improve performance and stability.
 
+If you want to run the corresponding minecraft servers you should take a look at [paperspigot-docker](https://github.com/FelixKlauke/paperspigot-docker).
+
 # Docker compose
 If you prefer docker-compose / stack checkout `docker-compose.yml` or the following example:
 ```yaml

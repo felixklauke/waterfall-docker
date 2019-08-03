@@ -7,7 +7,7 @@ services:
     stdin_open: true
     tty: true
     ports:
-      - 25566:25577
+      - 25566:25565
     volumes:
       - ./logs:/opt/waterfall/server/logs
       - ./plugins:/opt/waterfall/server/plugins

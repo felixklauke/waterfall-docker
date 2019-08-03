@@ -39,7 +39,8 @@ ADD scripts/docker-entrypoint.sh .
 ############
 ### User ###
 ############
-RUN useradd -ms /bin/bash waterfall && \
+RUN addgroup waterfall && \
+    useradd -ms /bin/bash waterfall -g waterfall -d ${SERVER_PATH} && \
     mkdir ${CONFIG_PATH} ${SERVER_PATH}/logs ${SERVER_PATH}/plugins && \
     chown waterfall $WATERFALL_PATH -R
 

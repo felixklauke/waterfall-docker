@@ -59,4 +59,4 @@ EXPOSE 25565
 ######################################
 ### Entrypoint is the start script ###
 ######################################
-ENTRYPOINT bash start.sh
+ENTRYPOINT [ "./docker-entrypoint.sh" ]

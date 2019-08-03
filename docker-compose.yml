@@ -3,11 +3,22 @@ version: '3.7'
 services:
 
   waterfall:
-    image: felixklauke/waterfall
+    image: felixklauke/waterfall:1.14
+    container_name: waterfall
+    restart: always
     stdin_open: true
     tty: true
+    networks:
+      - minecraft
     ports:
       - 25565:25565
     volumes:
-      - ./logs:/opt/waterfall/server/logs
-      - ./plugins:/opt/waterfall/server/plugins
+      - waterfall-logs:/opt/waterfall/server/logs
+      - waterfall-logs:/opt/waterfall/server/plugins
+
+volumes:
+  waterfall-logs: {}
+  waterfall-plugins: {}
+
+networks:
+  minecraft: {}

@@ -34,7 +34,7 @@ WORKDIR ${SERVER_PATH}
 ########################
 ### Obtain starth.sh ###
 ########################
-ADD start.sh .
+ADD scripts/docker-entrypoint.sh .
 
 ############
 ### User ###
@@ -43,6 +43,14 @@ RUN useradd -ms /bin/bash waterfall && \
     chown waterfall $WATERFALL_PATH -R
 
 USER waterfall
+
+###################
+### Preparation ###
+###################
+# Create symlinks for configs
+RUN ln -s $CONFIG_PATH/config.yml $SERVER_PATH/config.yml && \
+  ln -s $CONFIG_PATH/locations.yml $SERVER_PATH/locations.yml && \
+  ln -s $CONFIG_PATH/waterfall.yml $SERVER_PATH/waterfall.yml
 
 ###############
 ### Volumes ###

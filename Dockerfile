@@ -1,7 +1,7 @@
 ################################
 ### We use a java base image ###
 ################################
-FROM openjdk:11
+FROM openjdk:14
 
 #####################################
 ### Maintained by Felix Klauke    ###
